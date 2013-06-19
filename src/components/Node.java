@@ -7,12 +7,11 @@ package components;
  * @author Antonios Georgiadis
  */
 
-public class Node {
+public class Node<T> {
 	
-	public final String ID;
+	public final T ID;
 	
-	public Node (String ID) {
+	public Node (T ID) {
 		this.ID = ID;
 	}
-
 }
