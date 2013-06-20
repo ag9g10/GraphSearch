@@ -6,6 +6,7 @@ import java.util.List;
 import java.util.Queue;
 import java.util.Set;
 
+import components.Edge;
 import components.Graph;
 import components.Node;
 
@@ -20,22 +21,25 @@ import components.Node;
 public class BFS {
 
 	public static void bfs(Graph graph, Node root) {
-		
+
 		Queue<Node> queue = new LinkedList<Node>();
 		Set<Node> visited = new HashSet<Node>();
-		
-		List nodeList = graph.getNodes();
-		List edgeList = graph.getEdges();
-		
-		Node current = root;
-		visited.add(current);
-		
-		while (visited.size() < nodeList.size()) {
-			System.out.println(queue.poll().ID);
-			
-			
+
+		List<Node> nodeList = graph.getNodes();
+		List<Edge> edgeList = graph.getEdges();
+
+		Node current;
+		queue.add(root);
+		visited.add(root);
+
+		while (queue.size() > 0) {
+			current = queue.poll();
+			System.out.println(current.ID + " ");
+
+			for (Edge connection : current.getConnections()) {
+				queue.add(connection.destination);
+				visited.add(connection.destination);
+			}
 		}
-
-
 	}
 }

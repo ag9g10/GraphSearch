@@ -8,6 +8,7 @@ package test;
  * 
  */
 
+import algorithms.BFS;
 import components.Edge;
 import components.Graph;
 import components.Node;
@@ -45,6 +46,8 @@ public class GraphTest {
 		graph.addEdge(edgeFG);
 		graph.addEdge(edgeGI);
 		graph.addEdge(edgeIH);
+		
+		BFS.bfs(graph, nodeF);
 		
 	}
 
