@@ -31,4 +31,12 @@ public class Node {
 		y_cord = y;
 	}
 	
+	public int getX () {
+		return x_cord;
+	}
+	
+	public int getY () {
+		return y_cord;
+	}
+	
 }

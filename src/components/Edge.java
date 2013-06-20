@@ -16,19 +16,16 @@ public class Edge {
 	private int weight = 1;
 	public final Node origin;
 	public final Node destination;
-	public final boolean isDirected;
+
 	
-	
-	public Edge (Node origin, Node destination, boolean isDirected) {
+	public Edge (Node origin, Node destination) {
 		this.origin = origin;
 		this.destination = destination;
-		this.isDirected = isDirected;
 	}
 	
-	public Edge (Node origin, Node destination, boolean isDirected, int weight) {
+	public Edge (Node origin, Node destination, int weight) {
 		this.origin = origin;
 		this.destination = destination;
-		this.isDirected = isDirected;
 		this.weight = weight;
 	}
 
@@ -37,10 +34,9 @@ public class Edge {
 		this.weight = weight;
 	}
 	
-	public int getWeight(int weight) {
+	public int getWeight() {
 		return weight;
 	}
-	
 	
 
 }
