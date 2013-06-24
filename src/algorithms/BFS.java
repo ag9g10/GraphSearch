@@ -12,7 +12,7 @@ import components.Node;
 
 /**
  * 
- * Temporary implementaton for testing purposes.
+ * Breadth-First-Search Implementation
  * 
  * @author Antonios Georgiadis
  *
@@ -20,13 +20,10 @@ import components.Node;
 
 public class BFS {
 
-	public static void bfs(Graph graph, Node root) {
+	public static void search(Graph graph, Node root, Node goal) {
 
 		Queue<Node> queue = new LinkedList<Node>();
 		Set<Node> visited = new HashSet<Node>();
-
-		List<Node> nodeList = graph.getNodes();
-		List<Edge> edgeList = graph.getEdges();
 
 		Node current;
 		queue.add(root);
@@ -35,10 +32,13 @@ public class BFS {
 		while (queue.size() > 0) {
 			current = queue.poll();
 			System.out.println(current.ID + " ");
+			if (current.equals(goal)) break;
 
 			for (Edge connection : current.getConnections()) {
-				queue.add(connection.destination);
-				visited.add(connection.destination);
+				if (!visited.contains(connection.destination)) {
+					queue.add(connection.destination);
+					visited.add(connection.destination);
+				}
 			}
 		}
 	}

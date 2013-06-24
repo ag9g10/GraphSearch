@@ -54,6 +54,10 @@ public class Node {
 		}
 	}
 	
+	public void removeConn(Edge edge) {
+		connections.remove(edge);
+	}
+	
 	public List<Edge> getConnections() {
 		return connections;
 	}

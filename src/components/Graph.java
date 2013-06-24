@@ -22,11 +22,11 @@ public class Graph {
 		edgeList = new ArrayList<Edge>();
 	}
 
-	public List getNodes() {
+	public List<Node> getNodes() {
 		return nodeList;
 	}
 
-	public List getEdges() {
+	public List<Edge> getEdges() {
 		return edgeList;
 	}
 
@@ -36,10 +36,15 @@ public class Graph {
 		}
 	}
 
-	/*
-	 * [TODO] Take care of connections.
-	 */
 	public boolean removeNode(Node node) {
+		for (Edge edge : edgeList) {
+			if (edge.origin.equals(node)) {
+				edgeList.remove(edge);
+			} else if (edge.destination.equals(node)) {
+				edge.origin.removeConn(edge);
+				edgeList.remove(edge);
+			}
+		}
 		return nodeList.remove(node);
 	}
 

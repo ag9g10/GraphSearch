@@ -38,6 +38,9 @@ public class GraphTest {
 		Edge edgeGI = new Edge(nodeG, nodeI);
 		Edge edgeIH = new Edge(nodeI, nodeH);
 		
+		//Cycle Edge
+		Edge edgeHF = new Edge(nodeH, nodeF);
+		
 		graph.addEdge(edgeFB);
 		graph.addEdge(edgeBA);
 		graph.addEdge(edgeBD);
@@ -47,7 +50,11 @@ public class GraphTest {
 		graph.addEdge(edgeGI);
 		graph.addEdge(edgeIH);
 		
-		BFS.bfs(graph, nodeF);
+		//Cycle Edge
+		graph.addEdge(edgeHF);
+		
+		//Search Algorithms
+		BFS.search(graph, nodeF, nodeI);
 		
 	}
 
