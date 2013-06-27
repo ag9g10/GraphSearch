@@ -8,7 +8,9 @@ package test;
  * 
  */
 
+import GUI.MainFrame;
 import algorithms.BFS;
+
 import components.Edge;
 import components.Graph;
 import components.Node;
@@ -17,6 +19,7 @@ public class GraphTest {
 	
 	public static void main(String[] args) {
 		
+		/*
 		Graph graph = new Graph();
 		
 		Node nodeA = new Node ("A");
@@ -55,6 +58,10 @@ public class GraphTest {
 		
 		//Search Algorithms
 		BFS.search(graph, nodeF, nodeI);
+		*/
+		
+		MainFrame mf = new MainFrame("Test");
+		mf.init();
 		
 	}
 
