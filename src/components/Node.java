@@ -10,7 +10,7 @@ import java.util.List;
  * @author Antonios Georgiadis
  */
 
-public class Node {
+public class Node  {
 	
 	public final String ID;
 	private List<Edge> connections;
