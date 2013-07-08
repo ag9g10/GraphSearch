@@ -19,7 +19,7 @@ public class MainFrame extends JFrame {
 
 	public void init() {
 
-		JPanel mainPanel = new MainPanel();
+		JPanel mainPanel = new GraphPanel();
 		this.setContentPane(mainPanel);
 
 		this.setDefaultCloseOperation(EXIT_ON_CLOSE);
